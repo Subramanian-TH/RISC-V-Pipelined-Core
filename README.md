@@ -16,11 +16,11 @@ The design executes instructions using a five-stage pipeline (Fetch, Decode, Exe
   -Writeback (WB) – write results to the register file
 
 -RV32I Instruction Set Support (Subset):
-  -Arithmetic: ADD, SUB, ADDI
-  -Logical: AND, OR, XOR, ANDI, ORI, XORI
-  -Load/Store: LW, SW
-  -Branch: BEQ, BNE 
-  -Jump: JAL, JALR 
+  -Arithmetic: `ADD`, `SUB`, `ADDI`
+  -Logical: `AND`, `OR`, `XOR`, `ANDI`, `ORI`, `XORI`
+  -Load/Store: `LW`, `SW`
+  -Branch: `BEQ`, `BNE` 
+  -Jump: `JAL`, `JALR` 
 
 -Hazard Unit:
   -Detects data hazards (RAW)
