@@ -25,9 +25,9 @@ output FlushD
      
      assign StallF = lwStall;
      assign StallD = lwStall;
-     assign FlushE = lwStall;  
+     assign FlushE = lwStall | PCSrc_E;  
      
      //Flush Logic 
-     assign FlushD = PCSrc_E;              
+     assign FlushD = PCSrc_E;             
 
 endmodule
