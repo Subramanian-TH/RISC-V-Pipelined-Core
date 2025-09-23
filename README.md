@@ -48,10 +48,12 @@ The design executes instructions using a five-stage pipeline (Fetch, Decode, Exe
 
 1. Sarah L. Harris and David Money Harris, *Digital Design and Computer Architecture: RISC-V Edition*, Morgan Kaufmann, 2021.  
 
-2. Sarah Harris, *RISC-V David Harris and Sarah Harris Microarchitecture* [YouTube Playlist].  
+2. Sarah Harris, *RISC-V David Harris and Sarah Harris Microarchitecture* [YouTube Playlist].
+   
    Available: [YouTube – Sarah Harris](https://www.youtube.com/watch?v=lrN-uBKooRY&list=PLhA3DoZr6boVQy9Pz-aPZLH-rA6DvUidB&index=1)
 
 3.  RISC-V: From Transistors to AI, *RISC-V Pipeline Core in Verilog* [YouTube Playlist].
+   
     Available: [YouTube – RISC-V: From Transistors to AI](https://www.youtube.com/playlist?list=PL5AmAh9QoSK4fNTAQf2g-1s6FvQ8edoWd)
 
 ---
