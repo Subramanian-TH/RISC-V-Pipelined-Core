@@ -1,5 +1,6 @@
 module Decode_Cycle(
 input clk, rst, RegWriteW, 
+input FlushE,
 input [4:0] RdW, 
 input [31:0] InstrD, PCD, PCPlus4D, ResultW,
 output MemWrite_E, ALUSrc_E, RegWrite_E, Branch_E, Jump_E,
@@ -64,6 +65,25 @@ output [4:0] Rd_E, RS1E, RS2E
     begin
     if(rst == 1'b1)
     begin
+    MemWriteD_r <= 1'b0;
+    ALUSrcD_r <= 1'b0; 
+    RegWriteD_r <= 1'b0;
+    BranchD_r <= 1'b0; 
+    JumpD_r <= 1'b0;
+    ResultSrcD_r <= 2'b00;
+    ALUControlD_r <= 3'b000;
+    RD1_r <= 32'h00000000;
+    RD2_r <= 32'h00000000;
+    PCD_r <= 32'h00000000;
+    PCPlus4D_r <= 32'h00000000; 
+    ImmExtD_r <= 32'h00000000;
+    RdD_r <= 5'h00;
+    RS1D_r <= 5'h00;
+    RS2D_r <= 5'h00;
+    end 
+    
+    else if(FlushE)
+    begin   
     MemWriteD_r <= 1'b0;
     ALUSrcD_r <= 1'b0; 
     RegWriteD_r <= 1'b0;

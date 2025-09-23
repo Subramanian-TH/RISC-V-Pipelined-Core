@@ -1,6 +1,9 @@
 module Fetch_Cycle(
 input clk, rst, 
-input PCSrcE, 
+input en,
+input FlushD,
+input PCSrcE,
+input StallF, StallD,  
 input [31:0] PCTargetE,
 output [31:0] InstrD, PCD, PCPlus4D
     );
@@ -22,6 +25,7 @@ output [31:0] InstrD, PCD, PCPlus4D
                
     PC PC_Module(.clk(clk), 
                  .rst(rst), 
+                 .en(~StallF),
                  .PC_Next(PC_F),
                  .PC(PCF));
       
@@ -43,12 +47,20 @@ output [31:0] InstrD, PCD, PCPlus4D
        PCF_reg <= 32'h00000000;
        PCPlus4F_reg <= 32'h00000000; 
      end 
-     else 
+     
+     else if(FlushD)   
+     begin 
+       InstrF_reg <= 32'h00000000;
+       PCF_reg <= 32'h00000000;
+       PCPlus4F_reg <= 32'h00000000; 
+     end 
+     
+     else if(~StallD) 
      begin  
        InstrF_reg <= InstrF;
        PCF_reg <= PCF;
        PCPlus4F_reg <= PCPlus4F; 
-     end    
+     end
      end  
      
      //Output Declaration

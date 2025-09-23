@@ -6,6 +6,7 @@ output ALU_Result_Out
     
     //Interim Wires
     wire PCSrcE, RegWriteW, MemWriteE, ALUSrcE, RegWriteE, BranchE, JumpE, RegWriteM, MemWriteM;
+    wire StallF, StallD, FlushE, FlushD;
     wire [1:0] ResultSrcE, ResultSrcM, ResultSrcW;
     wire [2:0] ALUControlE;
     wire [4:0] RdW, RdE, RdM, RS1E, RS2E;
@@ -15,6 +16,10 @@ output ALU_Result_Out
     //Module Instantiation
     Fetch_Cycle Fetch (.clk(clk), 
                        .rst(rst), 
+                       .en(~StallF),
+                       .FlushD(FlushD),
+                       .StallF(StallF),
+                       .StallD(StallD),
                        .PCSrcE(PCSrcE), 
                        .PCTargetE(PCTargetE), 
                        .InstrD(InstrD),
@@ -24,7 +29,8 @@ output ALU_Result_Out
                        
     Decode_Cycle Decode(.clk(clk), 
                         .rst(rst), 
-                        .RegWriteW(RegWriteW), 
+                        .RegWriteW(RegWriteW),
+                        .FlushE(FlushE), 
                         .RdW(RdW), 
                         .InstrD(InstrD),
                         .PCD(PCD), 
@@ -106,12 +112,21 @@ output ALU_Result_Out
     Hazard_Unit Forwarding(.rst(rst), 
                            .RegWrite_M(RegWriteM), 
                            .RegWrite_W(RegWriteW),
+                           .PCSrc_E(PCSrcE),
                            .Rd_M(RdM), 
                            .Rd_W(RdW),
+                           .Rd_E(RdE),
+                           .RS1_D(RS1E), 
+                           .RS2_D(RS2E),
+                           .ResultSrc_E(ResultSrcE),
                            .RS1_E(RS1E), 
                            .RS2_E(RS2E),
                            .ForwardAE(ForwardAE), 
-                           .ForwardBE(ForwardBE)
+                           .ForwardBE(ForwardBE),
+                           .StallF(StallF), 
+                           .StallD(StallD), 
+                           .FlushE(FlushE),
+                           .FlushD(FlushD)
                            );    
                            
     assign ALU_Result_Out = ResultW[0];                                                                                                 
