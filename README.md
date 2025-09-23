@@ -31,11 +31,43 @@ The design executes instructions using a five-stage pipeline (Fetch, Decode, Exe
 ---
 
 ## Top Architecture
-<img width="952" height="618" alt="Pipelined RISC V" src="https://github.com/user-attachments/assets/ba1e9cbf-6e15-4983-8e7f-03ca7d3807dc" />
+<img width="1364" height="850" alt="Screenshot 2025-09-23 184258" src="https://github.com/user-attachments/assets/7d74762a-8543-4b56-8d73-602dbc36eeb2" />
+
+
 
 ---
 
 ## Simulation Results
 
+<img width="1782" height="1755" alt="RISCV_Pipelined" src="https://github.com/user-attachments/assets/4ab7fcb7-a01d-4a51-8dd2-43e6d4b221ca" />
 
+---
+
+## References
+
+1. Sarah L. Harris and David Money Harris, *Digital Design and Computer Architecture: RISC-V Edition*, Morgan Kaufmann, 2021.  
+
+2. Sarah Harris, *RISC-V David Harris and Sarah Harris Microarchitecture* [YouTube Playlist].  
+   Available: [YouTube – Sarah Harris](https://www.youtube.com/watch?v=lrN-uBKooRY&list=PLhA3DoZr6boVQy9Pz-aPZLH-rA6DvUidB&index=1)
+
+3.  RISC-V: From Transistors to AI, *RISC-V Pipeline Core in Verilog* [YouTube Playlist].
+    Available: [YouTube – RISC-V: From Transistors to AI](https://www.youtube.com/playlist?list=PL5AmAh9QoSK4fNTAQf2g-1s6FvQ8edoWd)
+
+---
+
+## License
+This project is **open-source** and available under the [MIT License](LICENSE).
+
+---
+
+## Author
+
+**Subramanian T H**  
+Final Year ECE Student - Sri Venkateswaraa College of Technology | VLSI Enthusiast
+- LinkedIn: linkedin.com/in/subramanian-t-h/  
+- Email: subramanith.ece@gmail.com
+
+
+
+   
   
