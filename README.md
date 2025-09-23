@@ -26,7 +26,8 @@ The design executes instructions using a five-stage pipeline (Fetch, Decode, Exe
 
 - **Hazard Unit**:  
   - Detects **data hazards (RAW)**  
-  - Implements **forwarding** to resolve hazards  
+  - Implements **forwarding** to resolve Data hazards
+  - Implements **Stalling and Flushing** to resolve Control hazards
 
 ---
 
