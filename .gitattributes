@@ -1,0 +1,6 @@
+# Ignore Vivado generated Tcl scripts
+*.tcl linguist-vendored
+
+# Ensure Verilog is recognized correctly
+*.v linguist-language=Verilog
+*.sv linguist-language=Verilog
