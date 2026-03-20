@@ -15,15 +15,15 @@
    * [5-Stage Pipelined Datapath](#5-stage-pipelined-datapath)
    * [Advanced Hazard Management](#advanced-hazard-management)
 3. [RV32I Instruction Set Supported](#3-rv32i-instruction-set-supported)
-4. [Verification & Test Program](#6-verification--test-program)
+4. [Verification & Test Program](#4-verification--test-program)
 
    * [Assembly to Machine Code Mapping](#assembly-to-machine-code-mapping)
    * [Memory Initialization (.mem file)](#memory-initialization-mem-file)
-5. [Simulation Results](#7-simulation-results)
-6. [Elaborated RTL Schematic](#8-elaborated-rtl-schematic)
-7. [References](#9-references)
-8. [License](#10-license)
-9. [About the Developer](#11-about-the-developer)
+5. [Simulation Results](#5-simulation-results)
+6. [Elaborated RTL Schematic](#6-elaborated-rtl-schematic)
+7. [References](#7-references)
+8. [License](#8-license)
+9. [About the Developer](#9-about-the-developer)
 
 ---
 
@@ -40,7 +40,7 @@ This project is a complete RTL design and verification of a 32-bit RISC-V microp
   
   ---
 
-  ## 2. Architecture Diagram
+## 2. Architecture Diagram
 
 The core implements a classic 5-stage pipeline (Fetch, Decode, Execute, Memory, Writeback) optimized for the RV32I instruction set. To maximize instruction throughput and handle dependencies, the datapath is tightly integrated with a dedicated, centralized Hazard Unit.
 
@@ -84,7 +84,7 @@ The core implements a classic 5-stage pipeline (Fetch, Decode, Execute, Memory, 
 
 ---
 
-## 6. Verification & Test Program
+## 4. Verification & Test Program
 
 To verify the core's pipeline and hazard management logic, the following RISC-V assembly program is loaded into the Instruction Memory. This specific sequence is designed to rigorously test the processor's handling of read-after-write (RAW) data hazards, control flow changes (branching and jumping), and memory access operations.
 
@@ -115,9 +115,9 @@ In the simulation environment, this machine code is initialized into the instruc
 004000EF
 00D665B3
 ```
+---
 
-
-## 7. Simulation Results
+## 5. Simulation Results
 
 This processor core was verified running the instruction sequence above in the Xilinx Vivado Simulator. The waveforms below demonstrate the seamless flow through the 5-stage pipeline, the dynamic resolution of Read-After-Write (RAW) data hazards via forwarding, and the flushing logic triggered by control hazards.
 
@@ -127,7 +127,7 @@ This processor core was verified running the instruction sequence above in the X
 
 ---
 
-### 8. Elaborated RTL Schematic
+## 6. Elaborated RTL Schematic
 
 The following schematic was generated via Xilinx Vivado, detailing the top-level entity of the processor. It highlights the inter-stage pipeline registers, the feedback paths for data forwarding and writeback, and the integration of the centralized Hazard Unit.
 
@@ -148,7 +148,7 @@ The following schematic was generated via Xilinx Vivado, detailing the top-level
   </table>
 </div>
 
-## 9. References
+## 7. References
 
 1. Sarah L. Harris and David Money Harris, *Digital Design and Computer Architecture: RISC-V Edition*, Morgan Kaufmann, 2021.
 2. Sarah Harris, *RISC-V Microarchitecture* (YouTube Playlist). Available: [YouTube - Sarah Harris](https://www.youtube.com/watch?v=lrN-uBKooRY&list=PLhA3DoZr6boVQy9Pz-aPZLH-rA6DvUidB&index=1)
@@ -156,13 +156,13 @@ The following schematic was generated via Xilinx Vivado, detailing the top-level
 
 ---
 
-## 10. License
+## 8. License
 
 This project is open-source and available under the [MIT License](https://opensource.org/licenses/MIT).
 
 ---
 
-## 11. About the Developer
+## 9. About the Developer
 
 **Subramanian T H**  
 Final Year ECE Student - Sri Venkateswaraa College of Technology | VLSI Enthusiast
